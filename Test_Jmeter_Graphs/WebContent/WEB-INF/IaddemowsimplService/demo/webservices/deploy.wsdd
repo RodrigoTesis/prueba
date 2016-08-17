@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from IaddemowsimplService WSDL service -->
+
+  <service name="Iaddemowsimpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices.demo"/>
+      <parameter name="wsdlServiceElement" value="IaddemowsimplService"/>
+      <parameter name="schemaQualified" value="http://webservices.demo"/>
+      <parameter name="wsdlServicePort" value="Iaddemowsimpl"/>
+      <parameter name="className" value="demo.webservices.Iaddemowsimpl"/>
+      <parameter name="wsdlPortType" value="Iaddemowsimpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservices.demo" xmlns:retNS="http://webservices.demo" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSaludoImagineando" qname="operNS:getSaludoImagineando" returnQName="retNS:getSaludoImagineandoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.demo" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nombre" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getSaludoImagineando"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.demo" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices.demo" xmlns:intf="http://webservices.demo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices.demo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getSaludoImagineando">
+    <complexType>
+     <sequence>
+      <element name="nombre" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSaludoImagineandoResponse">
+    <complexType>
+     <sequence>
+      <element name="getSaludoImagineandoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getSaludoImagineandoRequest">
+
+      <wsdl:part element="impl:getSaludoImagineando" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSaludoImagineandoResponse">
+
+      <wsdl:part element="impl:getSaludoImagineandoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Iaddemowsimpl">
+
+      <wsdl:operation name="getSaludoImagineando">
+
+         <wsdl:input message="impl:getSaludoImagineandoRequest" name="getSaludoImagineandoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSaludoImagineandoResponse" name="getSaludoImagineandoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IaddemowsimplSoapBinding" type="impl:Iaddemowsimpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSaludoImagineando">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSaludoImagineandoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSaludoImagineandoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IaddemowsimplService">
+
+      <wsdl:port binding="impl:IaddemowsimplSoapBinding" name="Iaddemowsimpl">
+
+         <wsdlsoap:address location="http://localhost:8080/test/services/Iaddemowsimpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
